@@ -71,3 +71,8 @@ export default defineConfig([
   },
 ])
 ```
+
+Para convertir imagenes a webp
+npm install -D sharp
+
+node -e "require('sharp')('public/placeholder.png').toFile('public/placeholder.webp')"

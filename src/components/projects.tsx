@@ -1,7 +1,6 @@
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
-
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -26,7 +25,7 @@ const projects = [
       demo: "#",
     },
   },
-]
+];
 
 export function Projects() {
   return (
@@ -35,8 +34,12 @@ export function Projects() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="space-y-4 mb-16">
-            <h2 className="text-sm font-mono text-primary uppercase tracking-wider">Proyectos</h2>
-            <p className="text-4xl md:text-5xl font-bold text-balance">Trabajos destacados</p>
+            <h2 className="text-sm font-mono text-primary uppercase tracking-wider">
+              Proyectos
+            </h2>
+            <p className="text-4xl md:text-5xl font-bold text-balance">
+              Trabajos destacados
+            </p>
           </div>
 
           {/* Projects Grid */}
@@ -48,15 +51,19 @@ export function Projects() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={project.image || "/placeholder.png"}
+                    src={project.image || "/placeholder.webp"}
                     alt={project.title}
+                    width="558"
+                    height="275"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-card to-transparent opacity-60" />
                 </div>
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-semibold">{project.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <span
@@ -68,15 +75,28 @@ export function Projects() {
                     ))}
                   </div>
                   <div className="flex gap-3 pt-2">
-                    <Button size="sm" variant="outline" className="gap-2 bg-transparent" asChild>
-                      <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="gap-2 bg-transparent"
+                      asChild
+                    >
+                      <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="h-4 w-4" />
                         Código
                       </a>
                     </Button>
                     {project.links.demo !== "#" && (
                       <Button size="sm" className="gap-2" asChild>
-                        <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.links.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <ExternalLink className="h-4 w-4" />
                           Demo
                         </a>
@@ -90,5 +110,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
